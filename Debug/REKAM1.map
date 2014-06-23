@@ -1,0 +1,635 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.0                      
+******************************************************************************
+>> Linked Fri Apr 25 12:57:47 2014
+
+OUTPUT FILE NAME:   <REKAM1.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000ee34
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  00000170  00000090  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  000033ee  00000bf2  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000000  00000002  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    0000c000    00000000     UNINITIALIZED
+
+.data      0    00000200    00000070     
+                  00000200    00000032     rekam1.obj (.data)
+                  00000232    00000015     rekam1.obj (.data:pinmux)
+                  00000247    00000001     --HOLE--
+                  00000248    0000000f     rekam1.obj (.data:sockip)
+                  00000257    00000001     --HOLE--
+                  00000258    0000000c     rekam1.obj (.data:pulse)
+                  00000264    00000006     UART.obj (.data)
+                  0000026a    00000003     rekam1.obj (.data:socktype)
+                  0000026d    00000001     --HOLE--
+                  0000026e    00000002     rekam1.obj (.data:buffer6)
+
+.TI.persistent 
+*          0    00000200    00000000     UNINITIALIZED
+
+.bss       0    00000270    00000024     UNINITIALIZED
+                  00000270    00000014     rekam1.obj (.bss)
+                  00000284    00000010     UART.obj (.bss)
+
+.TI.noinit 
+*          0    00000270    00000000     UNINITIALIZED
+
+.stack     0    00000324    000000dc     UNINITIALIZED
+                  00000324    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  00000326    000000da     --HOLE--
+
+.text      0    0000c000    00002f56     
+                  0000c000    00001f4c     rekam1.obj (.text:main)
+                  0000df4c    000003fe     rekam1.obj (.text:MOVE)
+                  0000e34a    000001be     rekam1.obj (.text:Timer0_A0)
+                  0000e508    0000017e     rekam1.obj (.text:GET)
+                  0000e686    00000100     rekam1.obj (.text:MOVEJ)
+                  0000e786    000000b0     rekam1.obj (.text:UNWRITE)
+                  0000e836    00000098     rekam1.obj (.text:PUTP)
+                  0000e8ce    0000008a     rekam1.obj (.text:itoa)
+                  0000e958    0000005e     rts430_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  0000e9b6    0000005e                     : autoinit.obj (.text:_auto_init)
+                  0000ea14    00000056     rekam1.obj (.text:reverse)
+                  0000ea6a    00000054     UART.obj (.text:InitUART)
+                  0000eabe    00000054     rts430_eabi.lib : atoi.obj (.text:atoi)
+                  0000eb12    00000048     UART.obj (.text:USCI0RX_ISR)
+                  0000eb5a    0000003a     UART.obj (.text:putnUART)
+                  0000eb94    00000034     rekam1.obj (.text:MAC)
+                  0000ebc8    00000032     rekam1.obj (.text:IFEQ)
+                  0000ebfa    00000032     rekam1.obj (.text:IFGT)
+                  0000ec2c    00000032     rekam1.obj (.text:IFLT)
+                  0000ec5e    0000002e     rekam1.obj (.text:PUT)
+                  0000ec8c    0000002c     rekam1.obj (.text:PORT1_ISR)
+                  0000ecb8    0000002c     rts430_eabi.lib : div16s.obj (.text)
+                  0000ece4    0000002c                     : lsl16.obj (.text)
+                  0000ed10    00000028                     : strncmp.obj (.text:strncmp)
+                  0000ed38    00000026     rekam1.obj (.text:PUTADD)
+                  0000ed5e    00000026     rekam1.obj (.text:SLEEP)
+                  0000ed84    00000020     rekam1.obj (.text:init_Seg)
+                  0000eda4    00000020     rts430_eabi.lib : strcat.obj (.text:strcat)
+                  0000edc4    00000020     rekam1.obj (.text:watchdog_timer)
+                  0000ede4    0000001c     rekam1.obj (.text:ENDIF)
+                  0000ee00    0000001a     rekam1.obj (.text:ConfigureTimerPwm)
+                  0000ee1a    0000001a     rekam1.obj (.text:InitializeButton)
+                  0000ee34    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000ee4e    00000018     rekam1.obj (.text:ConfigureAdc)
+                  0000ee66    00000018     rekam1.obj (.text:WRITE)
+                  0000ee7e    00000016     rts430_eabi.lib : div16u.obj (.text)
+                  0000ee94    00000016                     : strcpy.obj (.text:strcpy)
+                  0000eeaa    00000014     rekam1.obj (.text:OK)
+                  0000eebe    00000014     rts430_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000eed2    00000014                     : mult16.obj (.text)
+                  0000eee6    00000012                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0000eef8    00000012                     : memcpy.obj (.text:memcpy)
+                  0000ef0a    00000012                     : strlen.obj (.text:strlen)
+                  0000ef1c    00000010                     : epilog.obj (.text)
+                  0000ef2c    0000000e     HAL_Setup.obj (.text:HAL_Clock_Setup)
+                  0000ef3a    0000000a     rts430_eabi.lib : abs.obj (.text:abs)
+                  0000ef44    00000006                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  0000ef4a    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  0000ef4e    00000004                     : exit.obj (.text:abort)
+                  0000ef52    00000002     rekam1.obj (.text:ADC10_ISR)
+                  0000ef54    00000002     UART.obj (.text:USCI0TX_ISR)
+
+.const     0    0000ef56    0000043a     
+                  0000ef56    0000030e     rekam1.obj (.const:.string)
+                  0000f264    00000101     rts430_eabi.lib : ctype.obj (.const:_ctypes_)
+                  0000f365    00000001     --HOLE-- [fill = 0]
+                  0000f366    0000002a     rekam1.obj (.const:$P$T0$1)
+
+.cinit     0    0000f390    0000005e     
+                  0000f390    0000004c     (.cinit..data.load) [load image, compression = rle]
+                  0000f3dc    00000006     (__TI_handler_table)
+                  0000f3e2    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000f3e6    00000008     (__TI_cinit_table)
+
+PORT1      0    0000ffe4    00000002     
+                  0000ffe4    00000002     rekam1.obj (.int02)
+
+ADC10      0    0000ffea    00000002     
+                  0000ffea    00000002     rekam1.obj (.int05)
+
+USCIAB0TX 
+*          0    0000ffec    00000002     
+                  0000ffec    00000002     UART.obj (.int06)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     UART.obj (.int07)
+
+TIMER0_A0 
+*          0    0000fff2    00000002     
+                  0000fff2    00000002     rekam1.obj (.int09)
+
+WDT        0    0000fff4    00000002     
+                  0000fff4    00000002     rekam1.obj (.int10)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000f3e6 records: 2, size/record: 4, table size: 8
+	.data: load addr=0000f390, load size=0000004c bytes, run addr=00000200, run size=00000070 bytes, compression=rle
+	.bss: load addr=0000f3e2, load size=00000004 bytes, run addr=00000270, run size=00000024 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000f3dc records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+0000ef52   ADC10_ISR
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+00000264   Byte_Counter
+0000ef4e   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+0000ee4e   ConfigureAdc
+0000ee00   ConfigureTimerPwm
+00000056   DCOCTL
+0000ede4   ENDIF
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000224   Flash
+00000226   Flash2
+00000228   Flash3
+0000022a   Flashwrite
+0000e508   GET
+0000ef2c   HAL_Clock_Setup
+00000000   IE1
+00000001   IE2
+0000ebc8   IFEQ
+00000002   IFG1
+00000003   IFG2
+0000ebfa   IFGT
+0000ec2c   IFLT
+0000ea6a   InitUART
+0000ee1a   InitializeButton
+00000288   LineBuffer
+0000eb94   MAC
+0000df4c   MOVE
+0000e686   MOVEJ
+0000eeaa   OK
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+0000ec8c   PORT1_ISR
+0000ec5e   PUT
+0000ed38   PUTADD
+0000e836   PUTP
+00000202   Rate
+0000022c   SFlash
+0000ed5e   SLEEP
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+00000200   Time
+0000e34a   Timer0_A0
+00000286   UARTRxBufferPointer
+00000266   UARTRxBufferSize
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+0000e786   UNWRITE
+0000eb12   USCI0RX_ISR
+0000ef54   USCI0TX_ISR
+00000120   WDTCTL
+0000ee66   WRITE
+00000400   __STACK_END
+000000dc   __STACK_SIZE
+0000f3e6   __TI_CINIT_Base
+0000f3ee   __TI_CINIT_Limit
+0000f3dc   __TI_Handler_Table_Base
+0000f3e2   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+0000eee6   __TI_decompress_none
+0000ef44   __TI_decompress_rle24
+00000001   __TI_exit
+0000eebe   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+0000ecb8   __mspabi_divi
+0000ee7e   __mspabi_divu
+0000ef28   __mspabi_func_epilog_1
+0000ef26   __mspabi_func_epilog_2
+0000ef24   __mspabi_func_epilog_3
+0000ef22   __mspabi_func_epilog_4
+0000ef20   __mspabi_func_epilog_5
+0000ef1e   __mspabi_func_epilog_6
+0000ef1c   __mspabi_func_epilog_7
+0000eed2   __mspabi_mpyi
+0000ecb8   __mspabi_remi
+0000ee7e   __mspabi_remu
+0000ece4   __mspabi_slli
+0000ed0c   __mspabi_slli_1
+0000ecfa   __mspabi_slli_10
+0000ecf8   __mspabi_slli_11
+0000ecf6   __mspabi_slli_12
+0000ecf4   __mspabi_slli_13
+0000ecf2   __mspabi_slli_14
+0000ecf0   __mspabi_slli_15
+0000ed0a   __mspabi_slli_2
+0000ed08   __mspabi_slli_3
+0000ed06   __mspabi_slli_4
+0000ed04   __mspabi_slli_5
+0000ed02   __mspabi_slli_6
+0000ed00   __mspabi_slli_7
+0000ecfe   __mspabi_slli_8
+0000ecfc   __mspabi_slli_9
+0000e9b6   _auto_init
+0000ee34   _c_int00
+0000ee34   _c_int00_noexit
+0000f264   _ctypes_
+0000fffe   _reset_vector
+00000324   _stack
+0000ef4a   _system_pre_init
+00000276   a2dbuffer
+0000020e   a2dbuffersize
+00000220   a2dcounter
+0000021a   a2devent1
+0000021e   a2dperiod
+0000ef4e   abort
+0000ef3a   abs
+0000eabe   atoi
+00000284   bUARTDataReceived_event
+ffffffff   binit
+0000026e   buffer6
+00000218   bufferindex
+00000268   bufferlength
+0000020a   capture
+00000216   event
+0000020c   executor
+0000022e   flashpage
+0000ed84   init_Seg
+0000e8ce   itoa
+00000282   lastsleepcounter
+00000222   learn
+0000c000   main
+0000eef8   memcpy
+00000274   noflash
+00000212   period
+00000232   pinmux
+00000258   pulse
+0000021c   pulsecount
+00000206   pulsecounter
+0000eb5a   putnUART
+00000214   quiet
+0000ea14   reverse
+00000270   samples
+00000210   sleepcounter
+00000204   sleeptimer
+00000248   sockip
+00000230   sockport
+0000026a   socktype
+0000eda4   strcat
+0000ee94   strcpy
+0000ef0a   strlen
+0000ed10   strncmp
+00000208   timerMode
+0000edc4   watchdog_timer
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+000000dc   __STACK_SIZE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   Time
+00000202   Rate
+00000204   sleeptimer
+00000206   pulsecounter
+00000208   timerMode
+0000020a   capture
+0000020c   executor
+0000020e   a2dbuffersize
+00000210   sleepcounter
+00000212   period
+00000214   quiet
+00000216   event
+00000218   bufferindex
+0000021a   a2devent1
+0000021c   pulsecount
+0000021e   a2dperiod
+00000220   a2dcounter
+00000222   learn
+00000224   Flash
+00000226   Flash2
+00000228   Flash3
+0000022a   Flashwrite
+0000022c   SFlash
+0000022e   flashpage
+00000230   sockport
+00000232   pinmux
+00000248   sockip
+00000258   pulse
+00000264   Byte_Counter
+00000266   UARTRxBufferSize
+00000268   bufferlength
+0000026a   socktype
+0000026e   buffer6
+00000270   samples
+00000274   noflash
+00000276   a2dbuffer
+00000282   lastsleepcounter
+00000284   bUARTDataReceived_event
+00000286   UARTRxBufferPointer
+00000288   LineBuffer
+00000324   _stack
+00000400   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c000   main
+0000df4c   MOVE
+0000e34a   Timer0_A0
+0000e508   GET
+0000e686   MOVEJ
+0000e786   UNWRITE
+0000e836   PUTP
+0000e8ce   itoa
+0000e9b6   _auto_init
+0000ea14   reverse
+0000ea6a   InitUART
+0000eabe   atoi
+0000eb12   USCI0RX_ISR
+0000eb5a   putnUART
+0000eb94   MAC
+0000ebc8   IFEQ
+0000ebfa   IFGT
+0000ec2c   IFLT
+0000ec5e   PUT
+0000ec8c   PORT1_ISR
+0000ecb8   __mspabi_divi
+0000ecb8   __mspabi_remi
+0000ece4   __mspabi_slli
+0000ecf0   __mspabi_slli_15
+0000ecf2   __mspabi_slli_14
+0000ecf4   __mspabi_slli_13
+0000ecf6   __mspabi_slli_12
+0000ecf8   __mspabi_slli_11
+0000ecfa   __mspabi_slli_10
+0000ecfc   __mspabi_slli_9
+0000ecfe   __mspabi_slli_8
+0000ed00   __mspabi_slli_7
+0000ed02   __mspabi_slli_6
+0000ed04   __mspabi_slli_5
+0000ed06   __mspabi_slli_4
+0000ed08   __mspabi_slli_3
+0000ed0a   __mspabi_slli_2
+0000ed0c   __mspabi_slli_1
+0000ed10   strncmp
+0000ed38   PUTADD
+0000ed5e   SLEEP
+0000ed84   init_Seg
+0000eda4   strcat
+0000edc4   watchdog_timer
+0000ede4   ENDIF
+0000ee00   ConfigureTimerPwm
+0000ee1a   InitializeButton
+0000ee34   _c_int00
+0000ee34   _c_int00_noexit
+0000ee4e   ConfigureAdc
+0000ee66   WRITE
+0000ee7e   __mspabi_divu
+0000ee7e   __mspabi_remu
+0000ee94   strcpy
+0000eeaa   OK
+0000eebe   __TI_zero_init
+0000eed2   __mspabi_mpyi
+0000eee6   __TI_decompress_none
+0000eef8   memcpy
+0000ef0a   strlen
+0000ef1c   __mspabi_func_epilog_7
+0000ef1e   __mspabi_func_epilog_6
+0000ef20   __mspabi_func_epilog_5
+0000ef22   __mspabi_func_epilog_4
+0000ef24   __mspabi_func_epilog_3
+0000ef26   __mspabi_func_epilog_2
+0000ef28   __mspabi_func_epilog_1
+0000ef2c   HAL_Clock_Setup
+0000ef3a   abs
+0000ef44   __TI_decompress_rle24
+0000ef4a   _system_pre_init
+0000ef4e   C$$EXIT
+0000ef4e   abort
+0000ef52   ADC10_ISR
+0000ef54   USCI0TX_ISR
+0000f264   _ctypes_
+0000f3dc   __TI_Handler_Table_Base
+0000f3e2   __TI_Handler_Table_Limit
+0000f3e6   __TI_CINIT_Base
+0000f3ee   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[222 symbols]
